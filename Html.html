@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyHub UI Prototype</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f5f7fb;
+    color: #222;
+}
+
+/* HEADER */
+header {
+    background: #2d6cdf;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* NAV */
+nav {
+    background: #ffffff;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav button {
+    margin: 0 10px;
+    border: none;
+    background: none;
+    color: #2d6cdf;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* SCREENS */
+.screen {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+/* HERO */
+.hero {
+    padding: 40px;
+    text-align: center;
+    background: linear-gradient(135deg, #2d6cdf, #5aa2ff);
+    color: white;
+}
+
+.hero input {
+    width: 60%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* SECTION */
+.section {
+    padding: 30px;
+}
+
+/* CARD */
+.card {
+    display: inline-block;
+    width: 28%;
+    margin: 1%;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+/* BUTTON */
+button.action {
+    background: #2d6cdf;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* FOOTER */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>STUDYHUB</header>
+
+<nav>
+    <button onclick="show('home')">Головна</button>
+    <button onclick="show('courses')">Курси</button>
+    <button onclick="show('tests')">Тести</button>
+    <button onclick="show('profile')">Кабінет</button>
+</nav>
+
+<!-- HOME -->
+<div id="home" class="screen active">
+
+<div class="hero">
+    <h1>Навчайся легко та ефективно</h1>
+    <p>Знайди курси, тести та матеріали</p>
+    <input type="text" placeholder="Пошук курсів...">
+</div>
+
+<div class="section">
+    <h2>Популярні курси</h2>
+
+    <div class="card">
+        <h3>UI/UX Design</h3>
+        <p>Основи дизайну інтерфейсів</p>
+        <button class="action">Почати</button>
+    </div>
+
+    <div class="card">
+        <h3>Frontend</h3>
+        <p>HTML, CSS, JS</p>
+        <button class="action">Почати</button>
+    </div>
+
+    <div class="card">
+        <h3>Design</h3>
+        <p>Графічний дизайн</p>
+        <button class="action">Почати</button>
+    </div>
+</div>
+
+</div>
+
+<!-- COURSES -->
+<div id="courses" class="screen">
+    <div class="section">
+        <h2>Курси</h2>
+        <p>Тут список всіх курсів</p>
+    </div>
+</div>
+
+<!-- TESTS -->
+<div id="tests" class="screen">
+    <div class="section">
+        <h2>Тести</h2>
+        <p>UI/UX тест</p>
+        <p>HTML тест</p>
+        <p>CSS тест</p>
+    </div>
+</div>
+
+<!-- PROFILE -->
+<div id="profile" class="screen">
+    <div class="section">
+        <h2>Кабінет користувача</h2>
+        <p>Ім'я: Student</p>
+        <p>Прогрес: 50%</p>
+    </div>
+</div>
+
+<footer>© 2026 StudyHub</footer>
+
+<script>
+function show(screenId) {
+    let screens = document.querySelectorAll('.screen');
+    screens.forEach(s => s.classList.remove('active'));
+
+    document.getElementById(screenId).classList.add('active');
+}
+</script>
+
+</body>
+</html>
